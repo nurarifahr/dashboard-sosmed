@@ -1,7 +1,7 @@
 const contentSatu = [
     {
         id: 1,
-        colorBorder: "border-blue-facebook",
+        colorBorder: "border-t-4 border-blue-facebook",
         logo: "images/icon-facebook.svg",
         username: "@nathanf",
         jumlah: "1987",
@@ -13,7 +13,7 @@ const contentSatu = [
     },
     {
         id: 2,
-        colorBorder: "border-blue-twitter",
+        colorBorder: "border-t-4 border-blue-twitter",
         logo: "images/icon-twitter.svg",
         username: "@nathanf",
         jumlah: "1044",
@@ -25,10 +25,10 @@ const contentSatu = [
     },
     {
         id: 3,
-        colorBorder: "border-image-instagram",
+        colorBorder: "border-instagram",
         logo: "images/icon-instagram.svg",
         username: "@realnathanf",
-        jumlah: "11K",
+        jumlah: "11 K",
         ket: "FOLLOWERS",
         icon: "/images/icon-up.svg",
         ketIcon: "1099 Today",
@@ -37,7 +37,7 @@ const contentSatu = [
     },
     {
         id: 4,
-        colorBorder: "border-red-youtube",
+        colorBorder: "border-t-4 border-red-youtube",
         logo: "images/icon-youtube.svg",
         username: "Nathan F.",
         jumlah: "8239",

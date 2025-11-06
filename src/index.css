@@ -12,7 +12,7 @@
   --color-blue-facebook: hsl(208, 92%, 53%);
   --color-blue-twitter: hsl(203, 89%, 53%);
   --color-red-youtube: hsl(348, 97%, 39%);
-  --color-image-instagram: linear-gardient(
+  --color-image-instagram: linear-gradient(
     to right,
     hsl(37, 97%, 70%),
     hsl(5, 77%, 71%),
@@ -20,21 +20,25 @@
     );
 
   /* Default Theme */
-  --toggle-bg: hsl(230, 22%, 74%);
-  --background-color: hsl(0, 100%, 100%);
+  --color-toggle: hsl(230, 22%, 74%);
+  --background-main: hsl(0, 100%, 100%);
   --background-top-pattern: hsl(225, 100%, 98%);
   --background-card: hsl(227, 47%, 96%);
-  --font-color-text-satu: hsl(228, 12%, 44%);
-  --font-color-text-dua: hsl(230, 17%, 14%);
+  --color-text-satu: hsl(228, 12%, 44%);
+  --color-text-dua: hsl(230, 17%, 14%);
 }
 
 .dark{
-  --toggle-bg:linear-gradient(to right,hsl(210, 79%, 56%) hsl(146, 68%, 55%) )
-  --background-color: hsl(230, 17%, 14%);
+  --color-toggle:linear-gradient(
+    to right,
+    hsl(210, 79%, 56%), 
+    hsl(146, 68%, 55%));
+  --background-main: hsl(230, 17%, 14%);
   --background-top-pattern: hsl(232, 19%, 15%);
   --background-card: hsl(228, 28%, 20%);
-  --font-color-text-satu: hsl(230, 22%, 74%);
-  --font-color-text-dua: hsl(0, 100%, 100%);
+  --color-text-satu: hsl(230, 22%, 74%);
+  --color-text-dua: hsl(0, 100%, 100%);
+  
 }
 
 html,
@@ -43,4 +47,102 @@ body{
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: "Inter", sans-serif;
+}
+
+.bg-dark{
+  background: var(--color-toggle);
+}
+
+.border-instagram {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.border-instagram::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* tebal border top */
+  background: var(--color-image-instagram);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.flex-center{
+  @apply flex flex-col justify-center items-center;
+}
+.flex-between{
+  @apply flex flex-row justify-between items-center;
+}
+.flex-rows{
+  @apply flex flex-row items-center justify-center gap-2;
+}
+.container{
+  @apply bg-[var(--background-card)] py-8 rounded-sm;
+}
+.button{
+  @apply relative w-14 h-8 rounded-full cursor-pointer transition-colors duration-300 bg-[var(--color-toggle)];
+}
+.button-rounded{
+  @apply absolute top-1 left-1 w-6 h-6 bg-[var(--background-main)] rounded-full transition-transform duration-300 z-50;
+}
+
+@layer base{
+  h2{
+    @apply text-2xl font-bold text-text-dua;
+  };
+  p{
+    @apply text-sm font-semibold text-text-satu;
+  };
+  hr{
+    @apply text-text-satu my-5
+    md:hidden; 
+  }
+}
+
+@layer components{
+  main{
+    @apply w-full px-4 pt-6 bg-[var(--background-main)]
+    md:px-30;
+
+    .container-nav{
+      @apply bg-[var(--background-top-pattern)] absolute top-0 left-0 right-0 px-4 pt-6 pb-18 rounded-b-2xl
+      md:flex md:flex-row md:justify-between md:px-30 md:pt-10 md:pb-40;
+       }
+    .button-desktop{
+      @apply gap-4;
+    }
+  };
+
+  #contentSatu{
+    @apply relative pt-28
+    md:pt-20;
+    ul{
+      @apply space-y-5 py-8 text-center
+      md:flex md:flex-row md:space-y-0 md:gap-6;
+    }
+    h1{
+      @apply text-6xl font-extrabold text-text-dua
+      md:text-5xl;
+    }
+    h3{
+      @apply pt-2 pb-6 text-text-satu tracking-[0.4rem]
+      md:text-xs;
+    }
+    .flex-rows{
+     @apply pb-6;
+    }
+  }
+  #contentDua{
+    ul{
+      @apply space-y-5 py-8
+      md:grid md:grid-cols-4 md:gap-4 md:space-y-0;
+    }
+    .container{
+      @apply px-6 space-y-5;
+    }
+  }
 }
