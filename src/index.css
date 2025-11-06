@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  /* font */
+  --font-inter: "Inter", sans-serif;
+
+  /* color primary */
+  --color-pgreen-500: hsl(163, 72%, 41%);
+  --color-pred-500: hsl(356, 69%, 56%);
+  --color-blue-facebook: hsl(208, 92%, 53%);
+  --color-blue-twitter: hsl(203, 89%, 53%);
+  --color-red-youtube: hsl(348, 97%, 39%);
+  --color-image-instagram: linear-gardient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(5, 77%, 71%),
+    hsl(329, 70%, 58%)
+    );
+
+  /* Default Theme */
+  --toggle-bg: hsl(230, 22%, 74%);
+  --background-color: hsl(0, 100%, 100%);
+  --background-top-pattern: hsl(225, 100%, 98%);
+  --background-card: hsl(227, 47%, 96%);
+  --font-color-text-satu: hsl(228, 12%, 44%);
+  --font-color-text-dua: hsl(230, 17%, 14%);
+}
+
+.dark{
+  --toggle-bg:linear-gradient(to right,hsl(210, 79%, 56%) hsl(146, 68%, 55%) )
+  --background-color: hsl(230, 17%, 14%);
+  --background-top-pattern: hsl(232, 19%, 15%);
+  --background-card: hsl(228, 28%, 20%);
+  --font-color-text-satu: hsl(230, 22%, 74%);
+  --font-color-text-dua: hsl(0, 100%, 100%);
+}
+
+html,
+body{
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
